@@ -25,12 +25,12 @@ namespace H2SOLID.Shapes
             V = sideV;
         }
 
-        public double Perimeter()
+        public override double Perimeter()
         {
             return Math.Round((A + B) * 2, 2);
         }
 
-        public double Area()
+        public override double Area()
         {
             return Math.Round(A * B * Math.Sin(V), 2);
         }

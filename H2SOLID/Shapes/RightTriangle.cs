@@ -24,11 +24,11 @@ namespace H2SOLID
             B = sideB;
             C = sideC;
         }
-        public double Perimeter()
+        public override double Perimeter()
         {
             return Math.Round((A + B + C), 2);
         }
-        public double Area()
+        public override double Area()
         {
             return Math.Round((A * B / 2), 2);
         }

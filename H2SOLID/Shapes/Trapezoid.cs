@@ -30,12 +30,12 @@ namespace H2SOLID
             H = 2 / (A - C) * Math.Sqrt(s * (s - A + C) * (s - B) * (s - D));
         }
         
-        public double Perimeter()
+        public override double Perimeter()
         {
             return Math.Round((A + B + C + D), 2);
         }
 
-        public double Area()
+        public override double Area()
         {
             return Math.Round((A + C) * H / 2, 2);
         }

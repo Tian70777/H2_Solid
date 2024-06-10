@@ -21,11 +21,11 @@ namespace H2SOLID.Shapes
 
             A = sideA;
         }
-        public double Perimeter()
+        public virtual double Perimeter()
         {
             return Math.Round(A * 4, 2);
         }
-        public double Area()
+        public virtual double Area()
         {
             return Math.Round(A * A, 2);
         }
