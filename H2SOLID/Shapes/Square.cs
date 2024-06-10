@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace H2SOLID
+namespace H2SOLID.Shapes
 {
     public class Square
     {
@@ -23,11 +23,11 @@ namespace H2SOLID
         }
         public double Perimeter()
         {
-            return Math.Round((A * 4), 2);
+            return Math.Round(A * 4, 2);
         }
         public double Area()
         {
-            return Math.Round((A * A), 2);
+            return Math.Round(A * A, 2);
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using H2SOLID;
+using H2SOLID.Shapes;
 
 // Create a list of shapes
 List<Square> shapes = new List<Square> { };
