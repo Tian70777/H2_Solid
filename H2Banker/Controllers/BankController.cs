@@ -12,8 +12,9 @@ namespace H2Banker.Controllers
     {
         private List<Owner> _owners;
         private List<ICard> _cards;
-        public List<Owner> Owners { get; set; }
-        public List<ICard> Cards { get; set; }
+
+        public List<Owner> Owners { get; private set; }
+        public List<ICard> Cards { get; private set; }
 
         public BankController()
         {

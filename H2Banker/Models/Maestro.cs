@@ -20,7 +20,7 @@ namespace H2Banker.Models
         }
         public override string ToString()
         {
-            return $"Maestro Card: {_cardNumber}, Owner: {OwnerName}, Account Number: {_accountNumber}, Expiry date: {_expiryDate}";
+            return $"\nMaestro Card:\nCard Number: {CardNumber}\nOwner: {OwnerName}\nAccount Number: {AccountNumber}\nExpiry date: {ExpiryDate}";
         }
     }
 }

@@ -9,17 +9,19 @@ namespace H2Banker.Models
 {
     public class PrepaidCard : ICard, IDebtCard
     {
-        protected string _ownerName;
-        protected int _age;
-        protected string _cardNumber;
-        protected string _accountNumber;
-        protected DateTime _expiryDate;
-        protected int _withdrawLimitMonthly;
-        protected bool _online;
-        protected bool _abroad;
-        protected double _accountBalance;
-        protected double _withdrawTotal;
+        ////change to private 
+        //protected string _ownerName;
+        //protected int _age;
+        //protected string _cardNumber;
+        //protected string _accountNumber;
+        //protected DateTime _expiryDate;
+        //protected int _withdrawLimitMonthly;
+        //protected bool _online;
+        //protected bool _abroad;
+        //protected double _accountBalance;
+        //protected double _withdrawTotal;
 
+        // protected properties, keep public if uses in other classes
         public string OwnerName { get; set; }
         public int Age { get; set; } = 0;
         public string CardNumber { get; set ; } 
@@ -35,14 +37,14 @@ namespace H2Banker.Models
         public PrepaidCard(string ownerName, string cardNumber, string accountNumber, DateTime expiryDate)
         {
             OwnerName = ownerName;
-            _cardNumber = cardNumber;
-            _accountNumber = accountNumber;
-            _expiryDate = expiryDate;
+            CardNumber = cardNumber;
+            AccountNumber = accountNumber;
+            ExpiryDate = expiryDate;
         }
 
         public override string ToString()
         {
-            return $"Prepared Card: {_cardNumber}, Owner: {OwnerName}, Account Number: {_accountNumber}, Expiry date: {_expiryDate}";
+            return $"\nPrepared Card:\nCard Number: {CardNumber}\nOwner: {OwnerName}\nAccount Number: {AccountNumber}\nExpiry date: {ExpiryDate}";
         }
     }
 }

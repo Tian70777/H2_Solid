@@ -9,6 +9,9 @@ BankController bank = new BankController();
 // Create a new owner
 Owner owner1 = new Owner("John Doe", "Main Street 1", "12345678", new DateTime(1990, 1, 1));
 
+// Add owner to oners list
+bank.Owners.Add(owner1);
+
 // Create new cardService
 CardService cardService = new CardService(bank);
 
@@ -24,5 +27,12 @@ Console.WriteLine(newCard2.ToString());
 Console.WriteLine(newCard3.ToString());
 Console.WriteLine(newCard4.ToString());
 Console.WriteLine(newCard5.ToString());
+
+//print all cards in bank:
+foreach (var card in bank.Cards)
+{
+    Console.WriteLine(card.OwnerName);
+    Console.WriteLine(card.CardNumber);
+}
 
 Console.ReadLine();

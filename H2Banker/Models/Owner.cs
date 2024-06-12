@@ -9,11 +9,11 @@ namespace H2Banker.Models
 {
     public class Owner
     {
-        private string _name;
-        private string _address;
-        private string _phoneNumber;
-        private DateTime _birthday;
-        private List<ICard> _myCards;
+        //private string _name;
+        //private string _address;
+        //private string _phoneNumber;
+        //private DateTime _birthday;
+        //private List<ICard> _myCards;
         
         public string Name { get; set; }
         public string Address { get; set; }

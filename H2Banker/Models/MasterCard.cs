@@ -9,21 +9,22 @@ namespace H2Banker.Models
 {
     public class MasterCard : ICard, ICreditCard
     {
-        private string _ownerName;
-        private int _age;
-        private string _cardNumber;
-        private string _accountNumber;
-        private DateTime _expiryDate;
-        private int _withdrawLimitMonthly;
-        private int _withdrawLimitDaily;
-        private bool _online;
-        private bool _abroad;
-        private double _credit;
-        private double _creditBalance;
-        private double _cashAdvanceTotal;
-        private double _cashAdvanceFee;
-        private int _gracePeriod;
-        private double _interestRate;
+        //private string _ownerName;
+        //private int _age;
+        //private string _cardNumber;
+        //private string _accountNumber;
+        //private DateTime _expiryDate;
+        //private int _withdrawLimitMonthly;
+        //private int _withdrawLimitDaily;
+        //private bool _online;
+        //private bool _abroad;
+        //private double _credit;
+        //private double _creditBalance;
+        //private double _cashAdvanceTotal;
+        //private double _cashAdvanceFee;
+        //private int _gracePeriod;
+        //private double _interestRate;
+
         public string OwnerName { get; set; }
         public int Age { get; set; } = 18;
         public string CardNumber { get; set; } 
@@ -44,15 +45,15 @@ namespace H2Banker.Models
 
         public MasterCard(string ownerName, string cardNumber, string accountNumber, DateTime expiryDate)
         {
-            _ownerName = ownerName;
-            _cardNumber = cardNumber;
-            _accountNumber = accountNumber;
-            _expiryDate = expiryDate;
+            OwnerName = ownerName;
+            CardNumber = cardNumber;
+            AccountNumber = accountNumber;
+            ExpiryDate = expiryDate;
         }
 
         public override string ToString()
         {
-            return $"MasterCard: {_cardNumber}, Owner: {_ownerName}, Account Number: {_accountNumber}, Expiry date: {_expiryDate}, Credit :{Credit}";
+            return $"\nMasterCard:\nCard Number: {CardNumber}\nOwner: {OwnerName}\nAccount Number: {AccountNumber}\nExpiry date: {ExpiryDate}\nCredit: {Credit}";
         }
     }
 }
