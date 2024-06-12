@@ -15,9 +15,6 @@ namespace H2Banker.Interfaces
         int GracePeriod { get; set; }
         double InterestRate { get; set; }
 
-        
-        
-        
 
     }
 }
