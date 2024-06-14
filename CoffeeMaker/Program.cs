@@ -35,3 +35,5 @@ Console.WriteLine(waterStatus);
 
 waterStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.Americano);
 Console.WriteLine(waterStatus);
+
+Console.ReadLine();
