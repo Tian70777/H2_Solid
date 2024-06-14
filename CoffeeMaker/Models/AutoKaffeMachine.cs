@@ -1,4 +1,5 @@
-﻿using CoffeeMaker.Controllers.CoffeebeanController;
+﻿using CoffeeMaker.Controllers;
+using CoffeeMaker.Controllers.CoffeebeanController;
 using CoffeeMaker.Controllers.WaterControllerHeater;
 using CoffeeMaker.Controllers.WaterControllers;
 using CoffeeMaker.Models;
@@ -13,16 +14,27 @@ namespace CoffeeMaker.Models
     public class AutoKaffeMachine 
     {
         private IWaterControllerHeater _waterControllerHeater;
-        public AutoKaffeMachine(IWaterControllerHeater waterControllerHeater) 
+        private IAutoCoffeebeanControllerWithGrinder _autoCoffeebeanControllerWithGrinder;
+        public AutoKaffeMachine(IWaterControllerHeater waterControllerHeater, IAutoCoffeebeanControllerWithGrinder autoCoffeebeanControllerWithGrinder) 
         {
             _waterControllerHeater = waterControllerHeater;
+            _autoCoffeebeanControllerWithGrinder = autoCoffeebeanControllerWithGrinder;
         }
 
         public string MakeCoffee(CoffeeProgram coffeeProgram)
         {
+            // Cherck water level, then heat water
             _waterControllerHeater.WaterNeeded = _waterControllerHeater.WaterConsumptionForCoffeePrograms(coffeeProgram);
-            var waterStatus =  _waterControllerHeater.HeatWater(coffeeProgram);
-            return waterStatus;
+            var coffeeMakingStatus =  _waterControllerHeater.HeatWater(coffeeProgram);
+
+            // Check beans, then grind beans
+            _autoCoffeebeanControllerWithGrinder.ConsumeCoffeebean(coffeeProgram);
+
+            coffeeMakingStatus += _autoCoffeebeanControllerWithGrinder.GrindBeans();
+
+            coffeeMakingStatus += $"\nYour { coffeeProgram } is ready!\n";
+
+            return coffeeMakingStatus;
         }
     }
 }

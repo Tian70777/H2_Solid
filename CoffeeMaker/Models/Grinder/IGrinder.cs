@@ -8,6 +8,6 @@ namespace CoffeeMaker.Models.Grinder
 {
     public interface IGrinder
     {
-        public void GrindBeans();
+        public string GrindBeans();
     }
 }

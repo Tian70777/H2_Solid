@@ -1,4 +1,5 @@
 ﻿using CoffeeMaker;
+using CoffeeMaker.Controllers;
 using CoffeeMaker.Controllers.WaterControllerHeater;
 using CoffeeMaker.Controllers.WaterControllers;
 using CoffeeMaker.Models;
@@ -8,32 +9,36 @@ using CoffeeMaker.Models.WaterContainer;
 Factory.ConfigureWaterContainer(1000, 150);
 IWaterContainer waterContainer = Factory.CreateWaterContainer();
 
-
+// Set the capacity for bean container
+Factory.ConfigureBeanContainer(50);
+IAutoCoffeebeanControllerWithGrinder autoCoffeebeanControllerWithGrinder = Factory.CreateAutoCoffeebeanControllerWithGrinder();
 
 //IWaterController waterController = new WaterController(waterContainer);
 IWaterControllerHeater waterControllerHeater = Factory.CreateWaterControllerHeater();
 
-AutoKaffeMachine autoKaffeMachine = new AutoKaffeMachine(waterControllerHeater);
 
-string waterStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.Americano);
-Console.WriteLine(waterStatus);
 
-waterStatus =autoKaffeMachine.MakeCoffee(CoffeeProgram.Cappuccino);
-Console.WriteLine(waterStatus);
+AutoKaffeMachine autoKaffeMachine = new AutoKaffeMachine(waterControllerHeater, autoCoffeebeanControllerWithGrinder);
 
-waterStatus =  autoKaffeMachine.MakeCoffee(CoffeeProgram.Espresso);
-Console.WriteLine(waterStatus);
+string coffeeMakingStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.Americano);
+Console.WriteLine(coffeeMakingStatus);
 
-waterStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.HotWater);
-Console.WriteLine(waterStatus);
+coffeeMakingStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.Cappuccino);
+Console.WriteLine(coffeeMakingStatus);
 
-waterStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.Americano);
-Console.WriteLine(waterStatus);
+coffeeMakingStatus =  autoKaffeMachine.MakeCoffee(CoffeeProgram.Espresso);
+Console.WriteLine(coffeeMakingStatus);
 
-waterStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.DoubleEspresso);
-Console.WriteLine(waterStatus);
+coffeeMakingStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.HotWater);
+Console.WriteLine(coffeeMakingStatus);
 
-waterStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.Americano);
-Console.WriteLine(waterStatus);
+coffeeMakingStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.Americano);
+Console.WriteLine(coffeeMakingStatus);
+
+coffeeMakingStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.DoubleEspresso);
+Console.WriteLine(coffeeMakingStatus);
+
+coffeeMakingStatus = autoKaffeMachine.MakeCoffee(CoffeeProgram.Americano);
+Console.WriteLine(coffeeMakingStatus);
 
 Console.ReadLine();
