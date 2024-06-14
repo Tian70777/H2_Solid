@@ -26,4 +26,6 @@ foreach(Square shape in shapes)
     Console.WriteLine($"Area: {shape.Area()}, perimeter: { shape.Perimeter()}\n");
 }
 
+SolidDemoClassLibrary.Test.TestWrite();
+
 Console.ReadLine();

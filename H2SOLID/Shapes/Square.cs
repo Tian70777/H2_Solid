@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace H2SOLID.Shapes
 {
-    public class Square
+    public class Square : ISquare
     {
         private double a;
         public double A { get => a; set => a = value; }
